@@ -1,0 +1,17 @@
+{
+	"diagnostic.displayByAle": false,
+	"suggest.triggerCompletionWait": 300,
+	"clangd.semanticHighlighting": true,
+	"diagnostic.errorSign": "@",
+	"diagnostic.warningSign": "#",
+	"diagnostic.infoSign": "$",
+	"clangd.arguments": [
+		"--clang-tidy"
+	],
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-11",
+			"path": "/Library/Java/JavaVirtualMachines/jdk-11.0.6.jdk/Contents/Home"
+		}
+	]
+}
