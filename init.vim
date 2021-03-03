@@ -52,14 +52,13 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'kevinhwang91/rnvimr'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'wfxr/minimap.vim'
+Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
 call plug#end()
 let g:rnvimr_draw_border = 1
 let g:rnvimr_enable_ex = 1
 let g:doge_mapping='<Leader>dd'
-"let g:vimtex_compiler_progname = 'nvr'
-
-
+let g:vimtex_format_enabled = 1
 " let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
