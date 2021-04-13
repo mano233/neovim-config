@@ -1,6 +1,6 @@
 {
 	"diagnostic.displayByAle": false,
-	"suggest.triggerCompletionWait": 300,
+	"suggest.triggerCompletionWait": 100,
 	"clangd.semanticHighlighting": true,
 	"diagnostic.errorSign": "@",
 	"diagnostic.warningSign": "#",

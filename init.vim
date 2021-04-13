@@ -19,14 +19,6 @@ set nofoldenable
 syntax enable
 syntax on
 set termguicolors
-" 设置主题背景色透明，即使用终端的背景
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-if has('termguicolors') && &termguicolors
-    let g:jellybeans_overrides['background']['guibg'] = 'none'
-endif
-
 let g:terminal_key='<leader>=='
 let g:vista#renderer#enable_icon = 0
 
@@ -54,7 +46,28 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'wfxr/minimap.vim'
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
+Plug 'rakr/vim-one'
+Plug 'honza/vim-snippets'
 call plug#end()
+
+let g:lsp_cxx_hl_use_text_props = 1
+let g:lsp_cxx_hl_light_bg = 1
+
+set background=light        " for the light version
+let g:one_allow_italics = 1 " I love italic for comments
+colorscheme one
+let g:airline_theme='one'
+
+" 设置主题背景色透明，即使用终端的背景
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
+
+
+
 let g:rnvimr_draw_border = 1
 let g:rnvimr_enable_ex = 1
 let g:doge_mapping='<Leader>dd'
@@ -62,6 +75,9 @@ let g:vimtex_format_enabled = 1
 " let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_compiler_latexmk_engines = {'_':'-xelatex'}
+
+let g:vimtex_compiler_latexrun_engines ={'_':'xelatex'}
 
 augroup vimtex_mac
     autocmd!
@@ -116,11 +132,6 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 " 设置切换tab的快捷键 <\> + <q> 退出当前的 tab
 nmap <leader>q :bp<cr>:bd #<cr>
-
-"let g:gruvbox_contrast_dark = 'soft'
-"set bg="light"
-" colorscheme gruvbox
-colorscheme jellybeans
 
 let g:cmake_generate_options=['-G Ninja']
 
