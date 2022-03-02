@@ -1,9 +1,9 @@
-let g:python3_host_prog='/usr/local/bin/python3'
+let g:python3_host_prog='/usr/bin/python3'
 let g:python2_host_prog='/usr/bin/python2'
 set ts=4 sw=4
-
+let g:neovide_refresh_rate=75
 let g:airline_powerline_fonts = 1
-
+let g:coc_node_path = trim(system('which node'))
 set number
 "复制黏贴到剪切板
 set clipboard=unnamed
@@ -21,7 +21,7 @@ syntax on
 set termguicolors
 let g:terminal_key='<leader>=='
 let g:vista#renderer#enable_icon = 0
-
+let g:blamer_enabled = 1
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'skywind3000/vim-terminal-help'
@@ -38,6 +38,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 "Plug 'sbdchd/neoformat'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
+Plug 'APZelos/blamer.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 "Plug 'beeender/Comrade'
@@ -53,10 +54,10 @@ call plug#end()
 let g:lsp_cxx_hl_use_text_props = 1
 let g:lsp_cxx_hl_light_bg = 1
 
-set background=light        " for the light version
+"set background=light        " for the light version
 let g:one_allow_italics = 1 " I love italic for comments
-colorscheme one
-let g:airline_theme='one'
+colorscheme gruvbox
+"let g:airline_theme='one'
 
 " 设置主题背景色透明，即使用终端的背景
 let g:jellybeans_overrides = {
@@ -70,7 +71,7 @@ endif
 
 let g:rnvimr_draw_border = 1
 let g:rnvimr_enable_ex = 1
-let g:doge_mapping='<Leader>dd'
+let g:doge_mapping='<Leader>dc'
 let g:vimtex_format_enabled = 1
 " let g:vimtex_view_method = "skim"
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'

@@ -8,6 +8,7 @@
 	"clangd.arguments": [
 		"--clang-tidy"
 	],
+	"rust-analyzer.server.path":"/usr/local/Cellar/rust-analyzer/2021-11-29/bin/rust-analyzer",
 	"java.configuration.runtimes": [
 		{
 			"name": "JavaSE-11",
